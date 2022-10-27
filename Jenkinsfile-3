@@ -31,7 +31,10 @@ stages{
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-                        sh "cp -r **/target/*.war /tmp"
+                        sh '''
+                          id
+                          cp -r **/target/*.war /tmp
+                        '''  
                     }
                 }
 
