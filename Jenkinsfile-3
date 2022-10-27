@@ -31,13 +31,13 @@ stages{
             parallel{
                 stage ('Deploy to Staging'){
                     steps {
-                        sh "cp -r **/target/*.war /home/ec2-user/environment/apache-tomcat-8.5.83-staging/webapps"
+                        sh "cp -r **/target/*.war /tmp"
                     }
                 }
 
                 stage ("Deploy to Production"){
                     steps {
-                        sh "cp -r **/target/*.war /home/ec2-user/environment/apache-tomcat-8.5.83-production/webapps"
+                        sh "cp -r **/target/*.war /tmp"
                     }
                 }
             }
